@@ -10,7 +10,7 @@ from .ingredient import Ingredient
 class Cookbook:
     """Класс для управления кулинарной книгой."""
 
-    def init(self, filename: str = "cookbook.json"):
+    def __init__(self, filename: str = "cookbook.json"):
         """Инициализирует кулинарную книгу.
         """
         self._recipes: List[Recipe] = []
@@ -117,4 +117,5 @@ class Cookbook:
         print("Список покупок:")
         for ingredient, quantity in shopping_list.items():
             print(f"{ingredient}: {quantity} г")
+
 

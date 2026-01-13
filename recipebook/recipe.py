@@ -39,7 +39,6 @@ class Recipe:
         """
             Устанавливает название рецепта.
         :param value: название рецепта
-        :return: название рецепта
         """
         if not value or not value.strip():
             raise ValueError("Название рецепта не может быть пустым")
@@ -66,7 +65,6 @@ class Recipe:
         """
         Устанавливает описание рецепта.
         :param value: описание рецепта
-        :return: описание рецепта
         """
         self._description = value
 
@@ -99,7 +97,6 @@ class Recipe:
         """
         Устанавливает категорию рецепта.
         :param value: категория рецепта
-        :return: категория рецепта
         """
         self._category = value
 
@@ -107,7 +104,6 @@ class Recipe:
         """
         Добавляет ингредиент в рецепт.
         :param ingredient: ингридиент
-        :return: ингридиент
         """
         self._ingredients.append(ingredient)
 
@@ -115,7 +111,6 @@ class Recipe:
         """
         Удаляет ингредиент из рецепта по названию.
         :param ingredient_name: ингридиент
-        :return: ингридиент
         """
         for i, ingredient in enumerate(self._ingredients):
             if ingredient.name.lower() == ingredient_name.lower():
@@ -141,7 +136,6 @@ class Recipe:
         """
         Проверяет, содержит ли рецепт указанный ингредиент.
         :param ingredient_name: ингридиент
-        :return: ингридиент
         """
         return any(ingredient.name.lower() == ingredient_name.lower()
                    for ingredient in self._ingredients)
@@ -183,7 +177,6 @@ class Recipe:
         """
         Создает рецепт из словаря.
         :param data: рецепт из словаря
-        :return: рецепт из словаря
         """
         recipe = cls(
             name=data['name'],
@@ -196,6 +189,7 @@ class Recipe:
             recipe.add_ingredient(Ingredient.from_dict(ing_data))
 
         return recipe
+
 
 
 

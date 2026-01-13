@@ -12,36 +12,56 @@ class Ingredient:
 
     @property
     def name(self) -> str:
-        #Возвращает название ингредиента.
+        """Возвращает название ингредиента.
+
+        return название"""
         return self._name
 
     @name.setter
     def name(self, value: str):
-        #Устанавливает название ингредиента.
+        """Устанавливает название ингредиента.
+
+
+        param name название ингредиента"""
         if not value or not value.strip():
             raise ValueError("Название ингредиента не может быть пустым")
         self._name = value.strip()
 
     @property
     def quantity(self) -> float:
-        #Возвращает количество ингредиента.
+        """Возвращает количество ингредиента.
+
+        return количество ингредиента"""
         return self._quantity
 
     @quantity.setter
     def quantity(self, value: float):
-        #Устанавливает количество ингредиента.
+        """Устанавливает количество ингредиента.
+
+
+        param quantity количество ингридиента
+
+
+        """
         if value < 0:
             raise ValueError("Количество не может быть отрицательным")
         self._quantity = value
 
     @property
     def unit(self) -> str:
-        #Возвращает единицу измерения.
+        """Возвращает единицу измерения.
+
+        return единица измерения
+
+        """
         return self._unit
 
     @unit.setter
     def unit(self, value: str):
-        #Устанавливает единицу измерения.
+        """Устанавливает единицу измерения.
+
+        param unit единица измерения
+        """
         self._unit = value
 
     @property
@@ -87,3 +107,4 @@ class Ingredient:
             calories_per_unit=data.get('calories_per_unit', 0.0)
 
         )
+
